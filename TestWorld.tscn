@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://btc22dkvxf4ok"]
+
+[ext_resource type="PackedScene" uid="uid://bxu7vim5b8tbj" path="res://Player.tscn" id="1_e6d6w"]
+
+[sub_resource type="Environment" id="Environment_rc2jp"]
+background_mode = 1
+background_color = Color(0, 0.0784314, 0, 1)
+background_energy_multiplier = 0.6
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(10, 1, 10)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_e6d6w")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.531147, 0.84728, 0, -0.84728, 0.531147, 0, 2.71797, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rc2jp")

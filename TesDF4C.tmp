@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://btc22dkvxf4ok"]
+
+[ext_resource type="PackedScene" uid="uid://bxu7vim5b8tbj" path="res://Player.tscn" id="1_e6d6w"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(10, 0.1, 10)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_e6d6w")]

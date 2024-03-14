@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1710314514
+audio.tres::AudioBusLayout::7411510775810207703::1710242132::0::1::::<><>::
+CharacterController.gd::GDScript::-1::1710247306::0::1::::<>CharacterBody3D<>::
+Player.tscn::PackedScene::4044032527979743311::1710247078::0::1::::<><>::res://CharacterController.gd<>uid://cyakpe4j1qrjk::::res://Sounds/Player/Footsteps/tile1.wav<>uid://dog7iatbr6xyl::::res://Sounds/Player/Footsteps/tile2.wav<>uid://c5ehfkf1ly11s::::res://Sounds/Player/Footsteps/tile3.wav<>uid://cq8uliogh3mwv::::res://Sounds/Player/Footsteps/tile4.wav
+TestWorld.tscn::PackedScene::3725825217567167378::1710250778::0::1::::<><>::uid://bxu7vim5b8tbj::::res://Player.tscn
+::res://Sounds/::1710241306
+::res://Sounds/Player/::1710241348
+::res://Sounds/Player/Footsteps/::1710241354
+tile1.wav::AudioStreamWAV::6458007826872258432::1710241354::1710241354::1::::<><>::
+tile2.wav::AudioStreamWAV::8156249388076564095::1710241354::1710241354::1::::<><>::
+tile3.wav::AudioStreamWAV::6887198669616820958::1710241354::1710241354::1::::<><>::
+tile4.wav::AudioStreamWAV::5965221757164121025::1710241354::1710241354::1::::<><>::

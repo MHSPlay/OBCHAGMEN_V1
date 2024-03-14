@@ -1,8 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxu7vim5b8tbj"]
+[gd_scene load_steps=8 format=3 uid="uid://bxu7vim5b8tbj"]
 
 [ext_resource type="Script" path="res://CharacterController.gd" id="1_ev0y1"]
+[ext_resource type="AudioStream" uid="uid://cyakpe4j1qrjk" path="res://Sounds/Player/Footsteps/tile1.wav" id="2_5py4i"]
+[ext_resource type="AudioStream" uid="uid://dog7iatbr6xyl" path="res://Sounds/Player/Footsteps/tile2.wav" id="3_ql4tn"]
+[ext_resource type="AudioStream" uid="uid://c5ehfkf1ly11s" path="res://Sounds/Player/Footsteps/tile3.wav" id="4_1x7iy"]
+[ext_resource type="AudioStream" uid="uid://cq8uliogh3mwv" path="res://Sounds/Player/Footsteps/tile4.wav" id="5_vy1h2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_raxrk"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_adeab"]
+streams_count = 4
+stream_0/stream = ExtResource("2_5py4i")
+stream_0/weight = 5.0
+stream_1/stream = ExtResource("3_ql4tn")
+stream_1/weight = 5.0
+stream_2/stream = ExtResource("4_1x7iy")
+stream_2/weight = 5.0
+stream_3/stream = ExtResource("5_vy1h2")
+stream_3/weight = 1.0
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -15,3 +30,6 @@ shape = SubResource("CapsuleShape3D_raxrk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraHolder"]
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_adeab")

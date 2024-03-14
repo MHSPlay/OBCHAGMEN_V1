@@ -1,11 +1,23 @@
 extends CharacterBody3D
 
+
+# note - i think we don't need that for sound, but AAA project use that.
+var is_moving = false
+
+# game state ?
+var is_in_pause = false
+
+
+
+
 # player speed's
 class Player:
 	const walking_speed = 4.0
 	const running_speed = 7.0
 	const crouch_speed = 3.5
 	const lerp_speed = 10.0
+
+
 
 # setup default speed for player
 var current_speed = Player.walking_speed
@@ -16,9 +28,8 @@ const jump_velocity = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2.0
 var direction = Vector3.ZERO
 
-
 func _ready():
-	# lock cursor
+	# lock cursor by default
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
@@ -44,15 +55,37 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
+		is_moving = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
+		is_moving = false
 
 	move_and_slide()
 
 func _input(event):
-	# basic camera rotation
+	# basic camera rotation this not need to improve
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		$CameraHolder.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
 		$CameraHolder.rotation.x = clamp($CameraHolder.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+
+	# mhsplay - note: i think we need improve that, i don't like this check's on button.
+	if event.is_pressed():
+		if event.is_action("forward") or event.is_action("left") or event.is_action("backward") or event.is_action("right"):
+			if !($AudioPlayer.playing) and is_moving:
+				$AudioPlayer.play()
+	elif event.is_echo() and event.is_action_released("forward") and event.is_action_released("left") and event.is_action_released("backward") and event.is_action_released("right"):
+		$AudioPlayer.stop()
+
+
+# mhsplay - note: i think we need improve that, i don't like this check's on button.
+# mhsplay - note: it's basic func for pause game, menu, setting or other shit.
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE and !is_in_pause:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #get_tree().quit()
+			is_in_pause = true
+		elif (event.pressed and event.keycode == KEY_ESCAPE) and is_in_pause: 
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			is_in_pause = false

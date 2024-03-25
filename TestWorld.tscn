@@ -1,23 +1,173 @@
-[gd_scene load_steps=3 format=3 uid="uid://btc22dkvxf4ok"]
+[gd_scene load_steps=7 format=3 uid="uid://btc22dkvxf4ok"]
 
 [ext_resource type="PackedScene" uid="uid://bxu7vim5b8tbj" path="res://Player.tscn" id="1_e6d6w"]
+[ext_resource type="Shader" path="res://PSX PostProcessing.gdshader" id="2_6flts"]
+[ext_resource type="PackedScene" uid="uid://b8sdmvjc47irq" path="res://Objects/Dormitory/dorm2.glb" id="3_eqq7y"]
+[ext_resource type="PackedScene" uid="uid://cuoyqbaj4w71r" path="res://Objects/Lamp/lamp.glb" id="4_c5jbv"]
 
-[sub_resource type="Environment" id="Environment_rc2jp"]
-background_mode = 1
-background_color = Color(0, 0.0784314, 0, 1)
-background_energy_multiplier = 0.6
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6o8ix"]
+shader = ExtResource("2_6flts")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 16
+shader_parameter/dither_size = 1
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="Environment" id="Environment_fjva5"]
+ambient_light_source = 1
+reflected_light_source = 1
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+[node name="World" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_6o8ix")
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="BaseLamp12" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54892, 1.34259, -0.004)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/BaseLamp12"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_fjva5")
+
+[node name="dorm2" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_eqq7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="Illumination" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -0.15, 0)
+
+[node name="BaseLamp" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5, -0.004)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp2" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -0.004)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp3" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 5, -0.004)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp11" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9274, 5, 13.6716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp11"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 9.0
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp4" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4794, 5, -0.004)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp5" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.2582, 5, -0.004)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp6" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.5, 5, -9.5)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp7" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.5, 5, 9.5)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp7"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp8" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.5926, 5, 9.51549)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp8"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp9" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.593, 5, -9.5)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp9"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp10" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("4_c5jbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 5, -0.15)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp10"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.0
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_e6d6w")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
+
+[node name="door" type="CSGBox3D" parent="." groups=["LockedDoor"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76995, 2.57355)
 use_collision = true
-size = Vector3(10, 1, 10)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_e6d6w")]
+[node name="CSGBox3D2" type="CSGBox3D" parent="." groups=["key"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88464, 1.76995, 0.661099)
+use_collision = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.531147, 0.84728, 0, -0.84728, 0.531147, 0, 2.71797, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_rc2jp")
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06137, 1.86545, 3.22678)
+use_collision = true

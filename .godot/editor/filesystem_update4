@@ -1,4 +1,4 @@
-res://audio.tres
+res://TestWorld.tscn
+res://PSX PostProcessing.gdshader
 res://Player.tscn
 res://CharacterController.gd
-res://TestWorld.tscn

@@ -1,0 +1,146 @@
+[gd_scene load_steps=13 format=3 uid="uid://bqx36cnew0rsy"]
+
+[ext_resource type="Shader" path="res://PSX PostProcessing.gdshader" id="1_10rr4"]
+[ext_resource type="PackedScene" uid="uid://b8sdmvjc47irq" path="res://Objects/Dormitory/dorm2.glb" id="1_fhji8"]
+[ext_resource type="PackedScene" uid="uid://cuoyqbaj4w71r" path="res://Objects/Lamp/lamp.glb" id="2_12rf3"]
+[ext_resource type="Texture2D" uid="uid://dk3a1bgtq83ie" path="res://Image/MainMenu/CONTINUE.png" id="2_gyk5g"]
+[ext_resource type="Texture2D" uid="uid://cl03pbutd7crf" path="res://Image/MainMenu/LOGO.png" id="2_iajd8"]
+[ext_resource type="Script" path="res://Scripts/LightBlinkingComponent.gd" id="4_4yncy"]
+[ext_resource type="AudioStream" uid="uid://730antj0sky7" path="res://Sounds/Music/Menu/OST OBSHAGMEN.mp3" id="4_pl21u"]
+[ext_resource type="Texture2D" uid="uid://dni7unp637x5y" path="res://Image/MainMenu/START.png" id="4_umlfn"]
+[ext_resource type="Texture2D" uid="uid://caie8fn3d3mqn" path="res://Image/MainMenu/SETTINGS.png" id="5_f1pt3"]
+[ext_resource type="Texture2D" uid="uid://c5osrg2tww6re" path="res://Image/MainMenu/QUIT.png" id="6_84jcg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1d8l0"]
+shader = ExtResource("1_10rr4")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 16
+shader_parameter/dither_size = 1
+
+[sub_resource type="Environment" id="Environment_lj0fb"]
+ambient_light_source = 1
+reflected_light_source = 1
+fog_light_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+fog_light_energy = 3.5
+
+[node name="World" type="Node3D"]
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pl21u")
+autoplay = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_1d8l0")
+clip_contents = true
+offset_right = 1000.0
+offset_bottom = 480.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+sdf_oversize = 0
+sdf_scale = 0
+size = Vector2i(1000, 480)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0, 1.8, 0)
+
+[node name="UI" type="Control" parent="SubViewportContainer/SubViewport/Camera3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="SubViewportContainer/SubViewport/Camera3D/UI"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = -25.0
+offset_right = 419.0
+offset_bottom = 185.0
+texture = ExtResource("2_iajd8")
+expand_mode = 1
+
+[node name="Continue" type="TextureButton" parent="SubViewportContainer/SubViewport/Camera3D/UI/Logo"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 91.0
+offset_top = 5.0
+offset_right = 278.0
+offset_bottom = 110.0
+grow_vertical = 2
+texture_normal = ExtResource("2_gyk5g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Start" type="TextureButton" parent="SubViewportContainer/SubViewport/Camera3D/UI/Logo"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 140.0
+offset_right = 278.0
+offset_bottom = 245.0
+texture_normal = ExtResource("4_umlfn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Settings" type="TextureButton" parent="SubViewportContainer/SubViewport/Camera3D/UI/Logo"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 91.0
+offset_top = 65.0
+offset_right = 278.0
+offset_bottom = 170.0
+grow_vertical = 2
+texture_normal = ExtResource("5_f1pt3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton" type="TextureButton" parent="SubViewportContainer/SubViewport/Camera3D/UI/Logo"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 91.0
+offset_top = 95.0
+offset_right = 278.0
+offset_bottom = 200.0
+grow_vertical = 2
+texture_normal = ExtResource("6_84jcg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_lj0fb")
+
+[node name="Illumination" type="Node" parent="SubViewportContainer/SubViewport"]
+
+[node name="BaseLamp" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("2_12rf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4.825, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+
+[node name="BaseLamp5" parent="SubViewportContainer/SubViewport/Illumination" instance=ExtResource("2_12rf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 4.825, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Illumination/BaseLamp5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 1, 0.933333, 1)
+spot_range = 8.5
+spot_angle = 90.0
+spot_angle_attenuation = 0.870552
+script = ExtResource("4_4yncy")
+
+[node name="dorm2" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_fhji8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0)

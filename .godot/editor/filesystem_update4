@@ -1,4 +1,7 @@
-res://TestWorld.tscn
-res://PSX PostProcessing.gdshader
 res://Player.tscn
+res://PSX PostProcessing.gdshader
+res://TestWorld.tscn
+res://Interact.gd
 res://CharacterController.gd
+res://DoorScript.gd
+res://Key.gd

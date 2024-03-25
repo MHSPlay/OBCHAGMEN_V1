@@ -17,7 +17,7 @@ class Player:
 	const crouch_speed = 3.5
 	const lerp_speed = 10.0
 
-
+var keys = Array()
 
 # setup default speed for player
 var current_speed = Player.walking_speed
@@ -35,16 +35,8 @@ func interact():
 	if Ray.is_enabled() and Ray.is_colliding():
 		var body = Ray.get_collider()
 		
-		if body.is_in_group("LockedDoor"):
-			$AudioStreamPlayer.play()
-			
-		elif body.is_in_group("Door"):
-			print("Door")
-		elif body.is_in_group("key"):
-			print("key")
-			
-		else:
-			print("something")
+		if body.is_in_group("Interact"):
+			body.call("_interact")
 
 func _ready():
 	# lock cursor by default
@@ -53,7 +45,6 @@ func _ready():
 	Ray.set_enabled(false)
 
 func _physics_process(delta):
-	
 	#if Input.is_action_pressed("crouch"): # crouching ? we need that ?
 	if Input.is_action_pressed("sprint"):
 		current_speed = Player.running_speed

@@ -1,9 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://btc22dkvxf4ok"]
+[gd_scene load_steps=11 format=3 uid="uid://btc22dkvxf4ok"]
 
 [ext_resource type="PackedScene" uid="uid://bxu7vim5b8tbj" path="res://Player.tscn" id="1_e6d6w"]
 [ext_resource type="Shader" path="res://PSX PostProcessing.gdshader" id="2_6flts"]
 [ext_resource type="PackedScene" uid="uid://b8sdmvjc47irq" path="res://Objects/Dormitory/dorm2.glb" id="3_eqq7y"]
 [ext_resource type="PackedScene" uid="uid://cuoyqbaj4w71r" path="res://Objects/Lamp/lamp.glb" id="4_c5jbv"]
+[ext_resource type="Script" path="res://DoorScript.gd" id="6_8b4mb"]
+[ext_resource type="AudioStream" uid="uid://bi0uclb7qhh5j" path="res://Sounds/Doors/Locked.wav" id="7_26fop"]
+[ext_resource type="Script" path="res://Key.gd" id="7_v307j"]
+
+[sub_resource type="GDScript" id="GDScript_qu2d7"]
+script/source = "extends Node3D
+
+func _interact():
+	print(\"рот годот наоборот\")
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6o8ix"]
 shader = ExtResource("2_6flts")
@@ -17,6 +27,7 @@ ambient_light_source = 1
 reflected_light_source = 1
 
 [node name="World" type="Node3D"]
+script = SubResource("GDScript_qu2d7")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_6o8ix")
@@ -160,14 +171,25 @@ spot_angle_attenuation = 0.870552
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_e6d6w")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
 
-[node name="door" type="CSGBox3D" parent="." groups=["LockedDoor"]]
+[node name="door" type="CSGBox3D" parent="." groups=["Interact"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76995, 2.57355)
 use_collision = true
+script = ExtResource("6_8b4mb")
+SceneName = "MainMenu"
+Locked = true
+doorId = 2
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." groups=["key"]]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="door"]
+stream = ExtResource("7_26fop")
+
+[node name="key" type="CSGBox3D" parent="." groups=["Interact"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88464, 1.76995, 0.661099)
 use_collision = true
+script = ExtResource("7_v307j")
+keyId = 1
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06137, 1.86545, 3.22678)
+[node name="key2" type="CSGBox3D" parent="." groups=["Interact"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65053, 1.80704, 2.47707)
 use_collision = true
+script = ExtResource("7_v307j")
+keyId = 2

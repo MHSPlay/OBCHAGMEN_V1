@@ -1,12 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711496725
+::res://::1711527503
 audio.tres::AudioBusLayout::7411510775810207703::1711357149::0::1::::<><>::
-CharacterController.gd::GDScript::-1::1711365707::0::1::::<>CharacterBody3D<>::
-DoorScript.gd::GDScript::-1::1711365855::0::1::::<>Node3D<>::
-Key.gd::GDScript::-1::1711365272::0::1::::<>Node3D<>::
-Player.tscn::PackedScene::4044032527979743311::1711496753::0::1::::<><>::res://CharacterController.gd<>uid://cyakpe4j1qrjk::::res://Sounds/Player/Footsteps/tile1.wav<>uid://dog7iatbr6xyl::::res://Sounds/Player/Footsteps/tile2.wav<>uid://c5ehfkf1ly11s::::res://Sounds/Player/Footsteps/tile3.wav<>uid://cq8uliogh3mwv::::res://Sounds/Player/Footsteps/tile4.wav<>uid://bi0uclb7qhh5j::::res://Sounds/Doors/Locked.wav
-PSX PostProcessing.gdshader::Shader::-1::1711496753::0::1::::<><>::
-TestWorld.tscn::PackedScene::3725825217567167378::1711496753::0::1::::<><>::uid://bxu7vim5b8tbj::::res://Player.tscn<>res://PSX PostProcessing.gdshader<>uid://b8sdmvjc47irq::::res://Objects/Dormitory/dorm2.glb<>uid://cuoyqbaj4w71r::::res://Objects/Lamp/lamp.glb<>res://DoorScript.gd<>uid://bi0uclb7qhh5j::::res://Sounds/Doors/Locked.wav<>res://Key.gd
+Player.tscn::PackedScene::4044032527979743311::1711527490::0::1::::<><>::res://Scripts/CharacterController.gd<>uid://cyakpe4j1qrjk::::res://Sounds/Player/Footsteps/tile1.wav<>res://Scripts/flashlight.gd<>uid://dog7iatbr6xyl::::res://Sounds/Player/Footsteps/tile2.wav<>uid://c5ehfkf1ly11s::::res://Sounds/Player/Footsteps/tile3.wav<>uid://cq8uliogh3mwv::::res://Sounds/Player/Footsteps/tile4.wav<>uid://bi0uclb7qhh5j::::res://Sounds/Doors/Locked.wav
+PSX PostProcessing.gdshader::Shader::-1::1711527494::0::1::::<><>::
+TestWorld.tscn::PackedScene::3725825217567167378::1711527491::0::1::::<><>::uid://bxu7vim5b8tbj::::res://Player.tscn<>res://PSX PostProcessing.gdshader<>uid://b8sdmvjc47irq::::res://Objects/Dormitory/dorm2.glb<>uid://cuoyqbaj4w71r::::res://Objects/Lamp/lamp.glb<>res://Scripts/DoorScript.gd<>uid://bi0uclb7qhh5j::::res://Sounds/Doors/Locked.wav<>res://Scripts/Key.gd
 ::res://Fonts/::1711357149
 ::res://Fonts/Quinque Five/::1711357149
 License.txt::TextFile::-1::1711357149::0::1::::<><>::
@@ -51,10 +48,15 @@ dorm2_Wood_05.jpg::CompressedTexture2D::84283683888496596::1711357149::171135714
 ::res://Objects/Lamp/::1711357149
 lamp.glb::PackedScene::6207005362204485413::1711357149::1711357149::1::::<><>::
 lamp_Plastic_02.jpg::CompressedTexture2D::2492918404614922228::1711357149::1711357149::1::::<><>::
-::res://Scenes/::1711357149
-MainMenu.tscn::PackedScene::3558678430994808488::1711357149::0::1::::<><>::res://PSX PostProcessing.gdshader<>uid://b8sdmvjc47irq::::res://Objects/Dormitory/dorm2.glb<>uid://cuoyqbaj4w71r::::res://Objects/Lamp/lamp.glb<>uid://dk3a1bgtq83ie::::res://Image/MainMenu/CONTINUE.png<>uid://cl03pbutd7crf::::res://Image/MainMenu/LOGO.png<>res://Scripts/LightBlinkingComponent.gd<>uid://730antj0sky7::::res://Sounds/Music/Menu/OST OBSHAGMEN.mp3<>uid://dni7unp637x5y::::res://Image/MainMenu/START.png<>uid://caie8fn3d3mqn::::res://Image/MainMenu/SETTINGS.png<>uid://c5osrg2tww6re::::res://Image/MainMenu/QUIT.png
-::res://Scripts/::1711357149
+::res://Scenes/::1711527131
+MainMenu.tscn::PackedScene::3558678430994808488::1711527131::0::1::::<><>::res://PSX PostProcessing.gdshader<>uid://b8sdmvjc47irq::::res://Objects/Dormitory/dorm2.glb<>uid://cuoyqbaj4w71r::::res://Objects/Lamp/lamp.glb<>uid://dk3a1bgtq83ie::::res://Image/MainMenu/CONTINUE.png<>uid://cl03pbutd7crf::::res://Image/MainMenu/LOGO.png<>res://Scripts/LightBlinkingComponent.gd<>uid://730antj0sky7::::res://Sounds/Music/Menu/OST OBSHAGMEN.mp3<>uid://dni7unp637x5y::::res://Image/MainMenu/START.png<>uid://caie8fn3d3mqn::::res://Image/MainMenu/SETTINGS.png<>uid://c5osrg2tww6re::::res://Image/MainMenu/QUIT.png
+::res://Scripts/::1711527445
+CharacterController.gd::GDScript::-1::1711365707::0::1::::<>CharacterBody3D<>::
+DoorScript.gd::GDScript::-1::1711497096::0::1::::<>Node3D<>::
+flashlight.gd::GDScript::-1::1711527445::0::1::::<>SpotLight3D<>::
+Key.gd::GDScript::-1::1711497096::0::1::::<>Node3D<>::
 LightBlinkingComponent.gd::GDScript::-1::1711357149::0::1::::<>SpotLight3D<>::
+SceneSwitch.gd::GDScript::-1::1711497096::0::1::::<>Node<>::
 ::res://Sounds/::1711357149
 ::res://Sounds/Doors/::1711357149
 Locked.wav::AudioStreamWAV::3000759368869248793::1711357149::1711357149::1::::<><>::

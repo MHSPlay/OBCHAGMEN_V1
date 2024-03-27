@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxu7vim5b8tbj"]
+[gd_scene load_steps=10 format=3 uid="uid://bxu7vim5b8tbj"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_ev0y1"]
 [ext_resource type="AudioStream" uid="uid://cyakpe4j1qrjk" path="res://Sounds/Player/Footsteps/tile1.wav" id="2_5py4i"]
+[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="2_cbfya"]
 [ext_resource type="AudioStream" uid="uid://dog7iatbr6xyl" path="res://Sounds/Player/Footsteps/tile2.wav" id="3_ql4tn"]
 [ext_resource type="AudioStream" uid="uid://c5ehfkf1ly11s" path="res://Sounds/Player/Footsteps/tile3.wav" id="4_1x7iy"]
 [ext_resource type="AudioStream" uid="uid://cq8uliogh3mwv" path="res://Sounds/Player/Footsteps/tile4.wav" id="5_vy1h2"]
@@ -35,6 +36,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 [node name="RayCast3D" type="RayCast3D" parent="CameraHolder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 target_position = Vector3(0, 0, -1.6)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraHolder"]
+light_energy = 0.0
+spot_range = 20.0
+script = ExtResource("2_cbfya")
 
 [node name="FootstepsAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_adeab")

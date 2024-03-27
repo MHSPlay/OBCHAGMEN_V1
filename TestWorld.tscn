@@ -4,9 +4,9 @@
 [ext_resource type="Shader" path="res://PSX PostProcessing.gdshader" id="2_6flts"]
 [ext_resource type="PackedScene" uid="uid://b8sdmvjc47irq" path="res://Objects/Dormitory/dorm2.glb" id="3_eqq7y"]
 [ext_resource type="PackedScene" uid="uid://cuoyqbaj4w71r" path="res://Objects/Lamp/lamp.glb" id="4_c5jbv"]
-[ext_resource type="Script" path="res://DoorScript.gd" id="6_8b4mb"]
+[ext_resource type="Script" path="res://Scripts/DoorScript.gd" id="6_8b4mb"]
 [ext_resource type="AudioStream" uid="uid://bi0uclb7qhh5j" path="res://Sounds/Doors/Locked.wav" id="7_26fop"]
-[ext_resource type="Script" path="res://Key.gd" id="7_v307j"]
+[ext_resource type="Script" path="res://Scripts/Key.gd" id="7_v307j"]
 
 [sub_resource type="GDScript" id="GDScript_qu2d7"]
 script/source = "extends Node3D
@@ -169,6 +169,7 @@ spot_angle = 90.0
 spot_angle_attenuation = 0.870552
 
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_e6d6w")]
+unique_name_in_owner = true
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
 
 [node name="door" type="CSGBox3D" parent="." groups=["Interact"]]

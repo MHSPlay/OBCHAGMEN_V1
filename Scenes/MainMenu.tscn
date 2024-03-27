@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dk3a1bgtq83ie" path="res://Image/MainMenu/CONTINUE.png" id="2_gyk5g"]
 [ext_resource type="Texture2D" uid="uid://cl03pbutd7crf" path="res://Image/MainMenu/LOGO.png" id="2_iajd8"]
 [ext_resource type="Script" path="res://Scripts/LightBlinkingComponent.gd" id="4_4yncy"]
-[ext_resource type="AudioStream" uid="uid://730antj0sky7" path="res://Sounds/Music/Menu/OST OBSHAGMEN.mp3" id="4_pl21u"]
+[ext_resource type="AudioStream" uid="uid://730antj0sky7" path="res://Sounds/Music/Menu/OST_OBSHAGMEN.mp3" id="4_pl21u"]
 [ext_resource type="Texture2D" uid="uid://dni7unp637x5y" path="res://Image/MainMenu/START.png" id="4_umlfn"]
 [ext_resource type="Texture2D" uid="uid://caie8fn3d3mqn" path="res://Image/MainMenu/SETTINGS.png" id="5_f1pt3"]
 [ext_resource type="Texture2D" uid="uid://c5osrg2tww6re" path="res://Image/MainMenu/QUIT.png" id="6_84jcg"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1d8l0"]
 shader = ExtResource("1_10rr4")

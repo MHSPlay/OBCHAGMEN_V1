@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcsunpdj38br8"
+path="res://.godot/imported/OST LOADING OBSHAGMEN.wav-a0dfe8fd9eea0250afd723ba8e9af911.sample"
+
+[deps]
+
+source_file="res://Sounds/Music/Radio/OST LOADING OBSHAGMEN.wav"
+dest_files=["res://.godot/imported/OST LOADING OBSHAGMEN.wav-a0dfe8fd9eea0250afd723ba8e9af911.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

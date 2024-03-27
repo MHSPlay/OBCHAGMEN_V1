@@ -1,6 +1,5 @@
-res://Player.tscn
-res://PSX PostProcessing.gdshader
 res://TestWorld.tscn
-res://Scripts/DoorScript.gd
-res://Scripts/Key.gd
-res://Scripts/SceneSwitch.gd
+res://PSX PostProcessing.gdshader
+res://AudioStreamPlayer3D.gd
+res://Player.tscn
+res://Scripts/CharacterController.gd

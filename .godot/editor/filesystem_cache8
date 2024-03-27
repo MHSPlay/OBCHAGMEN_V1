@@ -1,4 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< HEAD
 ::res://::1711529597
 1floor.glb::PackedScene::273441576160891018::1711529577::1711529598::1::::<><>::uid://cn6q5knvbrkdu::::res://1floor_Asphalt.png<>uid://dl8hmjlif0ush::::res://1floor_1K-wall_cracked.jpg-diffuse.png<>uid://cvp7xv73y0eiv::::res://1floor_Door_03.jpg<>uid://cdma46qnxul7v::::res://1floor_Wood.jpg<>uid://dqyv4ildelwkt::::res://1floor_Doors.jpg<>uid://chdlu4wyok4bp::::res://1floor_TexturesCom_Pipes0071_2_M_P.jpg<>uid://dy7m7crfpf3iq::::res://1floor_Kitchen.jpg<>uid://dhrqwri4sxjt7::::res://1floor_Wood_02.jpg<>uid://beb6h6vp6q41n::::res://1floor_Paintings.jpg<>uid://cpt2e4hkfhb0a::::res://1floor_Wood_08.jpg<>uid://yj8ggnog0034::::res://1floor_Leather.jpg<>uid://t0i5o5g38yif::::res://1floor_Broom_02.png<>uid://cw13khf2selnh::::res://1floor_Foods_07.jpg<>uid://dm0rq40osop4i::::res://1floor_Mop.png<>uid://by4nlp4dh7kuc::::res://1floor_Plastic_09.jpg<>uid://bvy330jm33oph::::res://1floor_Plastic_10.png
 1floor_1K-wall_cracked.jpg-diffuse.png::CompressedTexture2D::7999910735532027283::1711529577::1711529598::1::::<><>::
@@ -101,3 +102,75 @@ tile1.wav::AudioStreamWAV::6458007826872258432::1711520778::1711520778::1::::<><
 tile2.wav::AudioStreamWAV::8156249388076564095::1711520778::1711520778::1::::<><>::
 tile3.wav::AudioStreamWAV::6887198669616820958::1711520778::1711520778::1::::<><>::
 tile4.wav::AudioStreamWAV::5965221757164121025::1711520778::1711520778::1::::<><>::
+=======
+::res://::1711527503
+audio.tres::AudioBusLayout::7411510775810207703::1711357149::0::1::::<><>::
+Player.tscn::PackedScene::4044032527979743311::1711527490::0::1::::<><>::res://Scripts/CharacterController.gd<>uid://cyakpe4j1qrjk::::res://Sounds/Player/Footsteps/tile1.wav<>res://Scripts/flashlight.gd<>uid://dog7iatbr6xyl::::res://Sounds/Player/Footsteps/tile2.wav<>uid://c5ehfkf1ly11s::::res://Sounds/Player/Footsteps/tile3.wav<>uid://cq8uliogh3mwv::::res://Sounds/Player/Footsteps/tile4.wav<>uid://bi0uclb7qhh5j::::res://Sounds/Doors/Locked.wav
+PSX PostProcessing.gdshader::Shader::-1::1711527494::0::1::::<><>::
+TestWorld.tscn::PackedScene::3725825217567167378::1711527491::0::1::::<><>::uid://bxu7vim5b8tbj::::res://Player.tscn<>res://PSX PostProcessing.gdshader<>uid://b8sdmvjc47irq::::res://Objects/Dormitory/dorm2.glb<>uid://cuoyqbaj4w71r::::res://Objects/Lamp/lamp.glb<>res://Scripts/DoorScript.gd<>uid://bi0uclb7qhh5j::::res://Sounds/Doors/Locked.wav<>res://Scripts/Key.gd
+::res://Fonts/::1711357149
+::res://Fonts/Quinque Five/::1711357149
+License.txt::TextFile::-1::1711357149::0::1::::<><>::
+Quinquefive-ALoRM.ttf::FontFile::1491246567896589088::1711357149::1711357149::1::::<><>::
+::res://Image/::1711357149
+::res://Image/MainMenu/::1711357149
+CONTINUE.png::CompressedTexture2D::7918999557892988780::1711357149::1711357149::1::::<><>::
+LOGO.png::CompressedTexture2D::5598255038250068319::1711357149::1711357149::1::::<><>::
+QUIT.png::CompressedTexture2D::6908531587193583730::1711357149::1711357149::1::::<><>::
+SETTINGS.png::CompressedTexture2D::4789658472565131693::1711357149::1711357149::1::::<><>::
+START.png::CompressedTexture2D::8090211407475646160::1711357149::1711357149::1::::<><>::
+::res://Objects/::1711357149
+::res://Objects/Dormitory/::1711357149
+dorm2.glb::PackedScene::4740016020850888770::1711357149::1711357149::1::::<><>::
+dorm2_1K-wall_cracked.jpg-diffuse.png::CompressedTexture2D::2300991327990005620::1711357149::1711357149::1::::<><>::
+dorm2_Asphalt.png::CompressedTexture2D::4657264511972478046::1711357149::1711357149::1::::<><>::
+dorm2_Bathroom Sink_Drain.jpg::CompressedTexture2D::1510892583582563544::1711357149::1711357149::1::::<><>::
+dorm2_Bookcase.jpg::CompressedTexture2D::5480562191061708853::1711357149::1711357149::1::::<><>::
+dorm2_Countertop.jpg::CompressedTexture2D::1152867918593674602::1711357149::1711357149::1::::<><>::
+dorm2_Cupboard.jpg::CompressedTexture2D::6011120632577346839::1711357149::1711357149::1::::<><>::
+dorm2_CupboardSide.jpg::CompressedTexture2D::6130319114240500156::1711357149::1711357149::1::::<><>::
+dorm2_Doors.jpg::CompressedTexture2D::5493451186558201591::1711357149::1711357149::1::::<><>::
+dorm2_Door_01.jpg::CompressedTexture2D::4574594104263424461::1711357149::1711357149::1::::<><>::
+dorm2_Door_03.jpg::CompressedTexture2D::6677557524734550438::1711357149::1711357149::1::::<><>::
+dorm2_Foods.jpg::CompressedTexture2D::2804392469433530436::1711357149::1711357149::1::::<><>::
+dorm2_Foods_02.jpg::CompressedTexture2D::5983305360256770437::1711357149::1711357149::1::::<><>::
+dorm2_Fridge Back.jpg::CompressedTexture2D::6769940714591582245::1711357149::1711357149::1::::<><>::
+dorm2_Fridge.png::CompressedTexture2D::6741380159522175449::1711357149::1711357149::1::::<><>::
+dorm2_Interior_objects.jpg::CompressedTexture2D::2225482447326322235::1711357149::1711357149::1::::<><>::
+dorm2_Kitchen.jpg::CompressedTexture2D::9045840013592865748::1711357149::1711357149::1::::<><>::
+dorm2_Marble_03.png::CompressedTexture2D::1546360239054298964::1711357149::1711357149::1::::<><>::
+dorm2_Metal_04.jpg::CompressedTexture2D::6535231345833656358::1711357149::1711357149::1::::<><>::
+dorm2_Plastic_02.jpg::CompressedTexture2D::7450780386841981559::1711357149::1711357149::1::::<><>::
+dorm2_SingleChair.jpg::CompressedTexture2D::6690311288381750485::1711357149::1711357149::1::::<><>::
+dorm2_Sink Texture.jpg::CompressedTexture2D::8663167337378342447::1711357149::1711357149::1::::<><>::
+dorm2_VHS_04.jpg::CompressedTexture2D::2752609432793953377::1711357149::1711357149::1::::<><>::
+dorm2_Wood.jpg::CompressedTexture2D::1555488389821025257::1711357149::1711357149::1::::<><>::
+dorm2_Wood_02.jpg::CompressedTexture2D::3952448818304281957::1711357149::1711357149::1::::<><>::
+dorm2_Wood_03.jpg::CompressedTexture2D::9129168333945537532::1711357149::1711357149::1::::<><>::
+dorm2_Wood_04.jpg::CompressedTexture2D::6247204848688206475::1711357149::1711357149::1::::<><>::
+dorm2_Wood_05.jpg::CompressedTexture2D::84283683888496596::1711357149::1711357149::1::::<><>::
+::res://Objects/Lamp/::1711357149
+lamp.glb::PackedScene::6207005362204485413::1711357149::1711357149::1::::<><>::
+lamp_Plastic_02.jpg::CompressedTexture2D::2492918404614922228::1711357149::1711357149::1::::<><>::
+::res://Scenes/::1711527131
+MainMenu.tscn::PackedScene::3558678430994808488::1711527131::0::1::::<><>::res://PSX PostProcessing.gdshader<>uid://b8sdmvjc47irq::::res://Objects/Dormitory/dorm2.glb<>uid://cuoyqbaj4w71r::::res://Objects/Lamp/lamp.glb<>uid://dk3a1bgtq83ie::::res://Image/MainMenu/CONTINUE.png<>uid://cl03pbutd7crf::::res://Image/MainMenu/LOGO.png<>res://Scripts/LightBlinkingComponent.gd<>uid://730antj0sky7::::res://Sounds/Music/Menu/OST OBSHAGMEN.mp3<>uid://dni7unp637x5y::::res://Image/MainMenu/START.png<>uid://caie8fn3d3mqn::::res://Image/MainMenu/SETTINGS.png<>uid://c5osrg2tww6re::::res://Image/MainMenu/QUIT.png
+::res://Scripts/::1711527445
+CharacterController.gd::GDScript::-1::1711365707::0::1::::<>CharacterBody3D<>::
+DoorScript.gd::GDScript::-1::1711497096::0::1::::<>Node3D<>::
+flashlight.gd::GDScript::-1::1711527445::0::1::::<>SpotLight3D<>::
+Key.gd::GDScript::-1::1711497096::0::1::::<>Node3D<>::
+LightBlinkingComponent.gd::GDScript::-1::1711357149::0::1::::<>SpotLight3D<>::
+SceneSwitch.gd::GDScript::-1::1711497096::0::1::::<>Node<>::
+::res://Sounds/::1711357149
+::res://Sounds/Doors/::1711357149
+Locked.wav::AudioStreamWAV::3000759368869248793::1711357149::1711357149::1::::<><>::
+::res://Sounds/Music/::1711357149
+::res://Sounds/Music/Menu/::1711357149
+OST OBSHAGMEN.mp3::AudioStreamMP3::2305364210947754488::1711357149::1711357149::1::::<><>::
+::res://Sounds/Player/::1711357149
+::res://Sounds/Player/Footsteps/::1711357149
+tile1.wav::AudioStreamWAV::6458007826872258432::1711357149::1711357149::1::::<><>::
+tile2.wav::AudioStreamWAV::8156249388076564095::1711357149::1711357149::1::::<><>::
+tile3.wav::AudioStreamWAV::6887198669616820958::1711357149::1711357149::1::::<><>::
+tile4.wav::AudioStreamWAV::5965221757164121025::1711357149::1711357149::1::::<><>::
+>>>>>>> b4646290c03e78b2e8d45d0183ea1e36895c417b

@@ -1,5 +1,9 @@
 res://TestWorld.tscn
+<<<<<<< HEAD
 res://PSX PostProcessing.gdshader
 res://AudioStreamPlayer3D.gd
 res://Player.tscn
 res://Scripts/CharacterController.gd
+=======
+res://Scripts/flashlight.gd
+>>>>>>> b4646290c03e78b2e8d45d0183ea1e36895c417b

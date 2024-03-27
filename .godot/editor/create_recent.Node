@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 AudioListener3D
 AudioStreamPlayer3D
+=======
+SpotLight3D
+>>>>>>> b4646290c03e78b2e8d45d0183ea1e36895c417b
 AudioStreamPlayer
 CSGBox3D
 CollisionShape3D
